@@ -1,0 +1,15 @@
+---
+version: "2.1"
+
+services:
+  deluge-watcher:
+    image: ncelebic/deluge-watcher
+    container_name: deluge-watcher
+    environment:
+      - DELUGE_HOST=127.0.0.1
+      - DELUGE_PORT=58846
+      - DELUGE_USERNAME=user
+      - DELUGE_PASSWORD=password
+      - DELUGE_TRACKER_WHITELIST=bigtorrent,minitracker
+      - DELUGE_RETRY_SECONDS=60
+      - DELUGE_TESTING_MODE=1

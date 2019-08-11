@@ -7,3 +7,4 @@ deluge:
         - bigtorrent
         - minitracker
     retry_seconds: 60
+    testing_mode: 1

@@ -63,5 +63,13 @@ while True:
             continue
         print("Found torrent not in whitelist that is active and complete: %s\nid: %s" %
               (converted_torrent['name'], converted_torrent_id))
-        client.core.pause_torrent([converted_torrent_id])
+        if cfg['deluge']['testing_mode'] == '1':
+            print("Action would be to pause torrent %s with id %s" % (converted_torrent['name'], converted_torrent_id))
+        else:
+            try:
+                client.core.pause_torrent([converted_torrent_id])
+                print("Paused torrent %s with id %s" % (converted_torrent['name'], converted_torrent_id))
+            except client.Exception:
+                logging.error(client.Exception)
+
     time.sleep(int(cfg['deluge']['retry_seconds']))

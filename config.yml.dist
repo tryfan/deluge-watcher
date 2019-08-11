@@ -1,0 +1,9 @@
+deluge:
+    host: 127.0.0.1
+    port: 58846
+    username: user
+    password: passwd
+    tracker_whitelist:
+        - bigtorrent
+        - minitracker
+    retry_seconds: 60

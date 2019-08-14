@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
-import time
 import logging
-import yaml
-from pathlib import Path
+import time
 from os import environ
+from pathlib import Path
+
+import yaml
 from deluge_client import DelugeRPCClient
 
 logging.basicConfig(level="INFO")
